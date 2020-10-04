@@ -647,12 +647,13 @@ You need to use recursion in this task. Feel free to return to it later, if you
 aren't ready for this boss yet!
 -}
 firstDigit :: Int -> Int
-firstDigit n 
-          | head n == 0 = n
-          | otherwise = firstDigit (head n)
+firstDigit n = first (abs n)
           where 
             head :: Int -> Int
             head x = div x 10
+            first x
+                  | head x == 0 = x
+                  | otherwise = firstDigit (head x)
 
 
 
